@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Detect-ION / Reference configuration across sites and revisions</title>
+<meta name="description" content="CLARION beta went up in February. Mayo Florida Pseudomonas collaboration landed in December. A hypothesis about the reference-configuration problem across chip revisions, three clinical sites, and the ML classifier." />
+<link rel="icon" type="image/svg+xml" href="icon.svg" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="https://detect-ion.com/" target="_blank" rel="noopener" aria-label="Detect-ION">
+      <img src="logo.svg" alt="Detect-ION" />
+    </a>
+    <div class="eyebrow">Prepared read, for the team</div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="molecule" aria-hidden="true">
+    <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="g1" cx="30%" cy="40%" r="70%">
+          <stop offset="0%" stop-color="#6acbdf" stop-opacity="0.22"/>
+          <stop offset="60%" stop-color="#262262" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="800" height="600" fill="url(#g1)"/>
+      <g fill="none" stroke="#6acbdf" stroke-opacity="0.28" stroke-width="0.8">
+        <circle cx="180" cy="180" r="4" fill="#6acbdf" fill-opacity="0.6"/>
+        <circle cx="330" cy="120" r="3" fill="#6acbdf" fill-opacity="0.6"/>
+        <circle cx="440" cy="220" r="5" fill="#00d084" fill-opacity="0.7"/>
+        <circle cx="560" cy="140" r="3" fill="#6acbdf" fill-opacity="0.6"/>
+        <circle cx="640" cy="300" r="4" fill="#6acbdf" fill-opacity="0.6"/>
+        <circle cx="260" cy="340" r="3" fill="#6acbdf" fill-opacity="0.6"/>
+        <circle cx="400" cy="420" r="4" fill="#6acbdf" fill-opacity="0.6"/>
+        <circle cx="540" cy="460" r="3" fill="#6acbdf" fill-opacity="0.6"/>
+        <circle cx="700" cy="500" r="4" fill="#6acbdf" fill-opacity="0.6"/>
+        <circle cx="120" cy="500" r="3" fill="#6acbdf" fill-opacity="0.6"/>
+        <line x1="180" y1="180" x2="330" y2="120"/>
+        <line x1="330" y1="120" x2="440" y2="220"/>
+        <line x1="440" y1="220" x2="560" y2="140"/>
+        <line x1="440" y1="220" x2="260" y2="340"/>
+        <line x1="260" y1="340" x2="400" y2="420"/>
+        <line x1="400" y1="420" x2="540" y2="460"/>
+        <line x1="540" y1="460" x2="640" y2="300"/>
+        <line x1="540" y1="460" x2="700" y2="500"/>
+        <line x1="400" y1="420" x2="120" y2="500"/>
+        <line x1="640" y1="300" x2="560" y2="140"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="wrap hero-inner">
+    <div class="kicker">A note for Detect-ION</div>
+    <h1>Real-time detection is a hardware problem. Reproducible detection across sites and revisions is a context problem.</h1>
+    <p class="lede">
+      CLARION beta went up in February. The Mayo Florida Pseudomonas collaboration landed in December. A short read on where the next eighteen months get harder, and where that work sits.
+    </p>
+    <div class="hero-meta">
+      <span>Matt Creamer, CRO</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>Eduba</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>Thirty minutes</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap prose">
+    <p>
+      You miniaturized complex mass spectrometry to chip scale. CLARION's beta rollout, the Mayo Clinic Florida collaboration on Pseudomonas aeruginosa, the Moffitt Cancer Center VOC study, the MATTHIAS project across the Republic of Congo: the scientific foundation is already there. The next eighteen months are a different kind of problem. You need the hardware revisions, the clinical sites, the analyte libraries, and the ML classifier to hold a single, auditable story. One an FDA reviewer can reconstruct. One a Series A diligence partner can follow. One a DoD program officer can verify.
+    </p>
+    <p>
+      This is where we work. Eduba designs the context architecture that sits above the instrument and below the model, so the evidence chain stays legible as each layer changes.
+    </p>
+  </div>
+</section>
+
+<section class="section layers">
+  <div class="wrap">
+    <div class="label">How we would think about CLARION specifically</div>
+    <h2>Most of what makes the platform trustworthy is not AI.</h2>
+    <div class="layer-grid">
+      <div class="layer">
+        <div class="pct">60<span>%</span></div>
+        <div class="ltitle">Classical software</div>
+        <div class="ldesc">Instrument firmware, sample-handling protocols, calibration routines, data capture.</div>
+      </div>
+      <div class="layer">
+        <div class="pct">30<span>%</span></div>
+        <div class="ltitle">Rule-based</div>
+        <div class="ldesc">Analyte identification thresholds, QC gates, site-specific correction factors.</div>
+      </div>
+      <div class="layer accent">
+        <div class="pct">10<span>%</span></div>
+        <div class="ltitle">Genuine AI</div>
+        <div class="ldesc">VOC pattern classification, cross-site generalization, new-analyte discovery.</div>
+      </div>
+    </div>
+    <p class="layer-note">
+      Teams who blur these layers ship slower and audit worse. Teams who separate them cleanly ship faster and pass audits without heroics. We design that separation, document it, and leave you with the framework.
+    </p>
+  </div>
+</section>
+
+<section class="section reference">
+  <div class="wrap reference-inner">
+    <div class="label light">The closest reference engagement</div>
+    <h2>VigilOre. Multi-agent compliance, DRC mining.</h2>
+    <p>
+      We collapsed over 160 hours of manual regulatory compliance work to under five minutes by building an interpretable context layer above their existing tools. Different industry, same shape: regulated environment, document-heavy evidence chain, multiple stakeholders who each need a different view of the same underlying facts.
+    </p>
+  </div>
+</section>
+
+<section class="section method">
+  <div class="wrap">
+    <div class="label">The method, published</div>
+    <h2>Interpretable Context Methodology.</h2>
+    <p class="method-body">
+      A layered filesystem-as-context pattern for agent and ML systems, submitted to ACM TiiS. Full paper and reference implementation below.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="llabel">Repository</span>
+        <a href="https://github.com/RinDig/Interpretable-Context-Methodology-ICM-" target="_blank" rel="noopener">github.com/RinDig/Interpretable-Context-Methodology-ICM-</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section cta">
+  <div class="wrap cta-inner">
+    <div class="label light">Next step</div>
+    <h2>Thirty minutes with Matt Creamer.</h2>
+    <p>
+      Bring one question you have not been able to answer cleanly across all three clinical sites. We will walk through how we would structure the context layer so that question stops recurring.
+    </p>
+    <a class="btn" href="https://calendly.com/thecro-eduba/30min" target="_blank" rel="noopener">
+      Book thirty minutes
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    <div class="sig">
+      Matt Creamer, CRO, Eduba.
+      <a href="https://eduba.io" target="_blank" rel="noopener">eduba.io</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>Prepared by Eduba. <a href="https://eduba.io" target="_blank" rel="noopener">eduba.io</a></div>
+    <div class="foot-right">For the Detect-ION team. Not for distribution.</div>
+  </div>
+</footer>
+
+</body>
+</html>
